@@ -201,11 +201,24 @@ body[data-theme="light"] #search-input {
 
 /* コンテンツ側 */
 .content {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1.1fr 1.5fr; /* 左：一覧 / 右：詳細 */
   gap: 16px;
+  align-items: flex-start;
+}
+.detail-section {
+  position: sticky;
+  top: 130px; /* ヘッダーの高さに合わせて調整してもOK */
 }
 
+/* スマホのときだけ今までどおり縦並びに戻す */
+@media (max-width: 800px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
 .section-title {
   margin: 0 0 8px;
   font-size: 1.1rem;

@@ -170,6 +170,14 @@ function showDetail(prop) {
       detailValuesEl.appendChild(chip);
     });
   }
+
+  // スマホでは詳細セクションまで自動でスクロール
+if (window.innerWidth <= 800) {
+  const detailSection = detailContainerEl.closest(".detail-section");
+  if (detailSection) {
+    detailSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
 }
 
 // ====== イベント設定 ======
