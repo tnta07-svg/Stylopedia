@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>CSSプロパティ図鑑</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="dark">
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="header-text">
+        <h1>CSS プロパティ図鑑</h1>
+        <p>ジャンル別に、HTML / CSS / 結果 を並べて確認できるビジュアル辞典。</p>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" aria-label="テーマ切替">
+        🌙
+      </button>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <!-- 左：カテゴリ & 検索 -->
+    <aside class="sidebar">
+      <h2 class="sidebar-title">カテゴリ</h2>
+      <div id="category-list" class="category-list">
+        <!-- JSでボタンを挿入 -->
+      </div>
+
+      <div class="search-box">
+        <label for="search-input">プロパティ検索</label>
+        <input id="search-input" type="text" placeholder="例：display, margin ...">
+      </div>
+    </aside>
+
+    <!-- 右：プロパティ一覧＋詳細 -->
+    <section class="content">
+      <section>
+        <h2 class="section-title">プロパティ一覧</h2>
+        <div id="property-list" class="property-list">
+          <!-- JSでカードを挿入 -->
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <h2 class="section-title">プロパティ詳細</h2>
+        <p id="detail-empty-message" class="detail-empty">
+          左の一覧からプロパティを選択すると、ここに<br>
+          <strong>HTML / CSS / 結果</strong> が表示されます。
+        </p>
+
+        <div id="detail-container" class="detail-container hidden">
+          <div class="detail-header">
+            <h3 id="detail-name"></h3>
+            <span id="detail-category" class="detail-chip"></span>
+          </div>
+          <p id="detail-description" class="detail-description"></p>
+
+          <!-- 3カラム（HTML / CSS / 結果） -->
+          <div class="detail-grid">
+            <div class="detail-block">
+              <h4>HTML</h4>
+              <pre><code id="detail-html"></code></pre>
+            </div>
+            <div class="detail-block">
+              <h4>CSS</h4>
+              <pre><code id="detail-css"></code></pre>
+            </div>
+            <div class="detail-block">
+              <h4>結果</h4>
+              <div id="detail-preview" class="preview-area">
+                <!-- JSでHTMLを挿入してプレビュー -->
+              </div>
+            </div>
+          </div>
+
+          <!-- よく使う値 -->
+          <div class="detail-tags">
+            <h4>よく使う値</h4>
+            <div id="detail-values" class="chip-row">
+              <!-- JSでチップを挿入 -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    &copy; 2025 CSS Property Book
+  </footer>
+
+ <!-- データ（タイプ別） -->
+  <script src="js/props-layout.js"></script>
+  <script src="js/props-spacing.js"></script>
+  <script src="js/props-border.js"></script>
+  <script src="js/props-typography.js"></script>
+  <script src="js/props-flex.js"></script>
+  <script src="js/props-color.js"></script>
+  <script src="js/props-animation.js"></script>
+
+  <!-- ★ 新しく追加するカテゴリ -->
+  <script src="js/props-grid.js"></script>
+  <script src="js/props-shorthand.js"></script>
+  <script src="js/props-responsive.js"></script>
+
+  <!-- アプリ本体ロジック -->
+  <script src="js/core.js"></script>
+</body>
+</html>
